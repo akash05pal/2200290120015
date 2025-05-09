@@ -1,22 +1,20 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 5000;
 
-// Middleware to parse JSON requests
-app.use(express.json());
-
-// Example endpoint
+// Sample route for root
 app.get('/', (req, res) => {
-  res.send('Hello, Backend!');
+  res.send('Welcome to the Backend!');
 });
 
-// Sample REST API endpoint
+// API Route for posts
 app.get('/api/posts', (req, res) => {
   const posts = [
-    { id: 1, title: 'First Post', body: 'This is the body of the first post' },
-    { id: 2, title: 'Second Post', body: 'This is the body of the second post' },
+    { id: 1, title: 'First Post', body: 'This is the body of the first post.' },
+    { id: 2, title: 'Second Post', body: 'This is the body of the second post.' },
+    { id: 3, title: 'Third Post', body: 'This is the body of the third post.' }
   ];
-  res.json(posts);
+  res.json(posts); // Sending JSON response
 });
 
 // Start the server
